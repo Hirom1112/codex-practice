@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沖縄ゆるり旅2026</title>
+  <style>
+    :root {
+      --bg: #e7f1f8;
+      --primary: #1c6fa6;
+      --accent: #4aa3d1;
+      --card: #ffffff;
+      --text: #12324a;
+      --muted: #5b7a93;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: radial-gradient(circle at 20% 20%, rgba(74, 163, 209, 0.15), transparent 40%),
+                  radial-gradient(circle at 80% 0%, rgba(28, 111, 166, 0.18), transparent 35%),
+                  var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      text-align: center;
+      padding: 64px 20px 48px;
+      background: linear-gradient(135deg, rgba(28, 111, 166, 0.92), rgba(74, 163, 209, 0.85));
+      color: #f6fbff;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.35), transparent 40%),
+                  radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2), transparent 45%);
+      pointer-events: none;
+    }
+
+    .header-content {
+      position: relative;
+      z-index: 1;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      margin: 0 0 12px;
+      letter-spacing: 0.08em;
+    }
+
+    .subtitle {
+      font-size: 1.05rem;
+      margin: 0 auto;
+      max-width: 720px;
+      color: #e5f3fb;
+    }
+
+    main {
+      max-width: 960px;
+      margin: -24px auto 48px;
+      padding: 0 20px;
+    }
+
+    section {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: 0 12px 28px rgba(18, 50, 74, 0.08);
+      border: 1px solid rgba(28, 111, 166, 0.1);
+    }
+
+    h2 {
+      margin-top: 0;
+      color: var(--primary);
+      font-size: 1.4rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 0.04em;
+    }
+
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--primary));
+      box-shadow: 0 0 0 6px rgba(74, 163, 209, 0.15);
+    }
+
+    p {
+      margin: 0 0 12px;
+      color: var(--muted);
+    }
+
+    .schedule-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+    }
+
+    .card {
+      padding: 16px;
+      background: linear-gradient(135deg, rgba(28, 111, 166, 0.05), rgba(74, 163, 209, 0.1));
+      border-radius: 12px;
+      border: 1px solid rgba(28, 111, 166, 0.12);
+    }
+
+    .card strong {
+      color: var(--primary);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    ul {
+      padding-left: 18px;
+      margin: 0;
+      color: var(--text);
+    }
+
+    li + li {
+      margin-top: 6px;
+    }
+
+    .note {
+      display: inline-block;
+      padding: 6px 10px;
+      background: rgba(28, 111, 166, 0.08);
+      color: var(--primary);
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px dashed rgba(28, 111, 166, 0.25);
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding: 48px 16px 36px;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      .schedule-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- タイトルセクション：旅のタイトルと概要 -->
+  <header>
+    <div class="header-content">
+      <h1>沖縄ゆるり旅2026</h1>
+      <p class="subtitle">冬のやわらかな陽ざしの中で、家族みんなでゆったりと過ごす5日間の沖縄旅のメモ。</p>
+    </div>
+  </header>
+
+  <main>
+    <!-- 日程セクション：旅行期間の概要 -->
+    <section>
+      <h2>日程</h2>
+      <p>2026年1月9日（金）〜1月13日（火）の5日間。寒い関西を離れ、穏やかな冬の沖縄でのんびり過ごします。</p>
+      <span class="note">家族4人 / レンタカー利用</span>
+    </section>
+
+    <!-- 日ごとのスケジュール：各日の予定概要 -->
+    <section>
+      <h2>日ごとのスケジュール</h2>
+      <div class="schedule-grid">
+        <div class="card">
+          <strong>1/9（金）</strong>
+          <p>関空から那覇へ移動し、本部町の宿にチェックイン。</p>
+        </div>
+        <div class="card">
+          <strong>1/10（土）</strong>
+          <p>美ら海水族館でじっくり海の世界を楽しむ日。</p>
+        </div>
+        <div class="card">
+          <strong>1/11（日）</strong>
+          <p>沖縄北部をドライブ観光。夜は宿でバーベキューを予定。</p>
+        </div>
+        <div class="card">
+          <strong>1/12（月）</strong>
+          <p>那覇の宿に移動し、国際通りなどでショッピング。</p>
+        </div>
+        <div class="card">
+          <strong>1/13（火）</strong>
+          <p>那覇から関空へ移動して帰宅。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 行きたい場所リスト：訪問予定スポット -->
+    <section>
+      <h2>行きたい場所リスト</h2>
+      <ul>
+        <li>美ら海水族館</li>
+        <li>名護パイナップルパーク</li>
+        <li>その他は考え中</li>
+      </ul>
+    </section>
+
+    <!-- やりたいことリスト：これから検討する内容 -->
+    <section>
+      <h2>やりたいことリスト</h2>
+      <p>これから家族で考える予定です。海辺の散歩や冬の星空観察など、アイデアを持ち寄って決めたいと思います。</p>
+    </section>
+  </main>
+</body>
+</html>
