@@ -21,8 +21,9 @@
     body {
       margin: 0;
       font-family: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: radial-gradient(circle at 20% 20%, rgba(74, 163, 209, 0.15), transparent 40%),
-                  radial-gradient(circle at 80% 0%, rgba(28, 111, 166, 0.18), transparent 35%),
+      background: linear-gradient(180deg, #ddecf8 0%, #f5fbff 40%, #e0f0fa 100%),
+                  radial-gradient(circle at 20% 20%, rgba(74, 163, 209, 0.12), transparent 38%),
+                  radial-gradient(circle at 80% 10%, rgba(28, 111, 166, 0.14), transparent 32%),
                   var(--bg);
       color: var(--text);
       line-height: 1.7;
@@ -70,6 +71,37 @@
       max-width: 960px;
       margin: -24px auto 48px;
       padding: 0 20px;
+    }
+
+    .countdown-card {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 14px;
+      text-align: center;
+      background: linear-gradient(135deg, rgba(28, 111, 166, 0.08), rgba(74, 163, 209, 0.12));
+      border: 1px solid rgba(28, 111, 166, 0.15);
+    }
+
+    .countdown-number {
+      font-size: clamp(2.8rem, 6vw, 4rem);
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: 0.06em;
+      display: inline-flex;
+      align-items: baseline;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .days-label {
+      font-size: 1.1rem;
+      color: var(--muted);
+    }
+
+    .countdown-note {
+      margin: 0;
+      color: var(--text);
     }
 
     section {
@@ -170,6 +202,16 @@
   </header>
 
   <main>
+    <!-- カウントダウンセクション：出発までの日数表示 -->
+    <section class="countdown-card">
+      <h2>出発まであと</h2>
+      <div class="countdown-number">
+        <span id="countdown-days">--</span>
+        <span class="days-label">日</span>
+      </div>
+      <p class="countdown-note" id="countdown-note">出発日に向けてわくわく準備中。</p>
+    </section>
+
     <!-- 日程セクション：旅行期間の概要 -->
     <section>
       <h2>日程</h2>
@@ -220,5 +262,28 @@
       <p>これから家族で考える予定です。海辺の散歩や冬の星空観察など、アイデアを持ち寄って決めたいと思います。</p>
     </section>
   </main>
+  <script>
+    // Countdown to the departure date (local time)
+    const countdownDaysEl = document.getElementById('countdown-days');
+    const countdownNoteEl = document.getElementById('countdown-note');
+
+    const departureDate = new Date('2026-01-09T00:00:00');
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const diffMs = departureDate.getTime() - today.getTime();
+    const remainingDays = Math.ceil(diffMs / (1000 * 60 * 60 * 24));
+
+    if (remainingDays > 0) {
+      countdownDaysEl.textContent = remainingDays;
+      countdownNoteEl.textContent = '出発の準備を進めよう！';
+    } else if (remainingDays === 0) {
+      countdownDaysEl.textContent = '0';
+      countdownNoteEl.textContent = 'ついに出発の日！行ってらっしゃい！';
+    } else {
+      countdownDaysEl.textContent = '0';
+      countdownNoteEl.textContent = '旅行は終了しました。また次の旅を計画しよう。';
+    }
+  </script>
 </body>
 </html>
