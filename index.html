@@ -33,14 +33,27 @@
 
     header {
       text-align: center;
-      padding: 68px 20px 56px;
-      background: linear-gradient(135deg, rgba(47, 124, 93, 0.94), rgba(107, 180, 141, 0.85));
+      padding: clamp(80px, 12vw, 120px) 20px clamp(70px, 10vw, 110px);
+      background-image: url('fbaku629P9093788-9628.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       color: #f6fbff;
       position: relative;
       overflow: hidden;
       border-bottom-left-radius: 28px;
       border-bottom-right-radius: 28px;
       box-shadow: 0 12px 26px rgba(20, 49, 38, 0.18);
+      isolation: isolate;
+    }
+
+    header::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(12, 30, 22, 0.55), rgba(47, 124, 93, 0.55));
+      z-index: 0;
+      pointer-events: none;
     }
 
     header::after {
@@ -50,11 +63,12 @@
       background: radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.28), transparent 42%),
                   radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2), transparent 46%);
       pointer-events: none;
+      z-index: 1;
     }
 
     .header-content {
       position: relative;
-      z-index: 1;
+      z-index: 2;
       max-width: 960px;
       margin: 0 auto;
     }
