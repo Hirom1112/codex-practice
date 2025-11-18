@@ -6,12 +6,14 @@
   <title>沖縄ゆるり旅2026</title>
   <style>
     :root {
-      --bg: #e7f1f8;
-      --primary: #1c6fa6;
-      --accent: #4aa3d1;
+      --bg: #e7f4ef;
+      --primary: #2f7c5d;
+      --accent: #6bb48d;
+      --deep: #1d5a42;
       --card: #ffffff;
-      --text: #12324a;
-      --muted: #5b7a93;
+      --text: #143126;
+      --muted: #4c6a5b;
+      --pill: rgba(47, 124, 93, 0.1);
     }
 
     * {
@@ -20,30 +22,33 @@
 
     body {
       margin: 0;
-      font-family: 'Noto Sans JP', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-      background: linear-gradient(180deg, #ddecf8 0%, #f5fbff 40%, #e0f0fa 100%),
-                  radial-gradient(circle at 20% 20%, rgba(74, 163, 209, 0.12), transparent 38%),
-                  radial-gradient(circle at 80% 10%, rgba(28, 111, 166, 0.14), transparent 32%),
+      font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif;
+      background: linear-gradient(180deg, #eef7f1 0%, #e2f0e8 45%, #d5e9df 100%),
+                  radial-gradient(circle at 22% 15%, rgba(107, 180, 141, 0.22), transparent 38%),
+                  radial-gradient(circle at 80% 10%, rgba(47, 124, 93, 0.2), transparent 32%),
                   var(--bg);
       color: var(--text);
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
     header {
       text-align: center;
-      padding: 64px 20px 48px;
-      background: linear-gradient(135deg, rgba(28, 111, 166, 0.92), rgba(74, 163, 209, 0.85));
+      padding: 68px 20px 56px;
+      background: linear-gradient(135deg, rgba(47, 124, 93, 0.94), rgba(107, 180, 141, 0.85));
       color: #f6fbff;
       position: relative;
       overflow: hidden;
+      border-bottom-left-radius: 28px;
+      border-bottom-right-radius: 28px;
+      box-shadow: 0 12px 26px rgba(20, 49, 38, 0.18);
     }
 
     header::after {
       content: "";
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.35), transparent 40%),
-                  radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2), transparent 45%);
+      background: radial-gradient(circle at 70% 10%, rgba(255, 255, 255, 0.28), transparent 42%),
+                  radial-gradient(circle at 20% 80%, rgba(255, 255, 255, 0.2), transparent 46%);
       pointer-events: none;
     }
 
@@ -55,21 +60,22 @@
     }
 
     h1 {
-      font-size: clamp(2.2rem, 4vw, 3.4rem);
+      font-size: clamp(2.3rem, 4.6vw, 3.6rem);
       margin: 0 0 12px;
       letter-spacing: 0.08em;
+      font-weight: 800;
     }
 
     .subtitle {
-      font-size: 1.05rem;
+      font-size: 1.06rem;
       margin: 0 auto;
       max-width: 720px;
-      color: #e5f3fb;
+      color: #e9f7ef;
     }
 
     main {
-      max-width: 960px;
-      margin: -24px auto 48px;
+      max-width: 1040px;
+      margin: -18px auto 64px;
       padding: 0 20px;
     }
 
@@ -77,16 +83,19 @@
       display: grid;
       grid-template-columns: 1fr;
       align-items: center;
-      gap: 14px;
+      gap: 12px;
       text-align: center;
-      background: linear-gradient(135deg, rgba(28, 111, 166, 0.08), rgba(74, 163, 209, 0.12));
-      border: 1px solid rgba(28, 111, 166, 0.15);
+      background: linear-gradient(135deg, rgba(47, 124, 93, 0.08), rgba(107, 180, 141, 0.12));
+      border: 1px solid rgba(47, 124, 93, 0.16);
+      padding: 28px 22px;
+      border-radius: 18px;
+      box-shadow: 0 12px 28px rgba(20, 49, 38, 0.08);
     }
 
     .countdown-number {
-      font-size: clamp(2.8rem, 6vw, 4rem);
-      font-weight: 700;
-      color: var(--primary);
+      font-size: clamp(3rem, 6vw, 4.2rem);
+      font-weight: 800;
+      color: var(--deep);
       letter-spacing: 0.06em;
       display: inline-flex;
       align-items: baseline;
@@ -95,8 +104,13 @@
     }
 
     .days-label {
-      font-size: 1.1rem;
+      font-size: 1.05rem;
       color: var(--muted);
+      font-weight: 600;
+      background: var(--pill);
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(47, 124, 93, 0.18);
     }
 
     .countdown-note {
@@ -104,23 +118,30 @@
       color: var(--text);
     }
 
+    .countdown-label {
+      font-size: 0.98rem;
+      letter-spacing: 0.06em;
+      color: var(--muted);
+    }
+
     section {
       background: var(--card);
-      border-radius: 16px;
-      padding: 24px;
-      margin-bottom: 20px;
-      box-shadow: 0 12px 28px rgba(18, 50, 74, 0.08);
-      border: 1px solid rgba(28, 111, 166, 0.1);
+      border-radius: 18px;
+      padding: 26px;
+      margin-bottom: 24px;
+      box-shadow: 0 14px 30px rgba(20, 49, 38, 0.08);
+      border: 1px solid rgba(47, 124, 93, 0.12);
     }
 
     h2 {
       margin-top: 0;
-      color: var(--primary);
-      font-size: 1.4rem;
+      color: var(--deep);
+      font-size: 1.48rem;
       display: inline-flex;
       align-items: center;
       gap: 10px;
       letter-spacing: 0.04em;
+      font-weight: 800;
     }
 
     h2::before {
@@ -130,7 +151,7 @@
       height: 12px;
       border-radius: 50%;
       background: linear-gradient(135deg, var(--accent), var(--primary));
-      box-shadow: 0 0 0 6px rgba(74, 163, 209, 0.15);
+      box-shadow: 0 0 0 7px rgba(107, 180, 141, 0.18);
     }
 
     p {
@@ -145,16 +166,49 @@
     }
 
     .card {
-      padding: 16px;
-      background: linear-gradient(135deg, rgba(28, 111, 166, 0.05), rgba(74, 163, 209, 0.1));
-      border-radius: 12px;
-      border: 1px solid rgba(28, 111, 166, 0.12);
+      padding: 18px;
+      background: linear-gradient(135deg, rgba(47, 124, 93, 0.06), rgba(107, 180, 141, 0.12));
+      border-radius: 14px;
+      border: 1px solid rgba(47, 124, 93, 0.14);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: linear-gradient(135deg, rgba(255, 255, 255, 0.06), transparent 45%);
     }
 
     .card strong {
-      color: var(--primary);
+      color: var(--deep);
       display: block;
       margin-bottom: 6px;
+      font-weight: 800;
+      font-size: 1.05rem;
+    }
+
+    .day-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: var(--pill);
+      color: var(--deep);
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      border: 1px solid rgba(47, 124, 93, 0.18);
+      margin-bottom: 10px;
+      box-shadow: 0 6px 16px rgba(20, 49, 38, 0.06);
+    }
+
+    .divider {
+      margin: 12px 0 16px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(47, 124, 93, 0.28), transparent);
     }
 
     ul {
@@ -169,12 +223,18 @@
 
     .note {
       display: inline-block;
-      padding: 6px 10px;
-      background: rgba(28, 111, 166, 0.08);
-      color: var(--primary);
+      padding: 7px 12px;
+      background: rgba(47, 124, 93, 0.08);
+      color: var(--deep);
       border-radius: 999px;
       font-size: 0.9rem;
-      border: 1px dashed rgba(28, 111, 166, 0.25);
+      border: 1px dashed rgba(47, 124, 93, 0.24);
+      letter-spacing: 0.02em;
+    }
+
+    .list-accent li::marker {
+      content: "● ";
+      color: var(--accent);
     }
 
     @media (max-width: 600px) {
@@ -183,7 +243,7 @@
       }
 
       section {
-        padding: 20px;
+        padding: 22px 18px;
       }
 
       .schedule-grid {
@@ -204,6 +264,7 @@
   <main>
     <!-- カウントダウンセクション：出発までの日数表示 -->
     <section class="countdown-card">
+      <p class="countdown-label">家族旅行が待ちきれないね</p>
       <h2>出発まであと</h2>
       <div class="countdown-number">
         <span id="countdown-days">--</span>
@@ -224,22 +285,27 @@
       <h2>日ごとのスケジュール</h2>
       <div class="schedule-grid">
         <div class="card">
+          <span class="day-pill">1日目</span>
           <strong>1/9（金）</strong>
           <p>関空から那覇へ移動し、本部町の宿にチェックイン。</p>
         </div>
         <div class="card">
+          <span class="day-pill">2日目</span>
           <strong>1/10（土）</strong>
           <p>美ら海水族館でじっくり海の世界を楽しむ日。</p>
         </div>
         <div class="card">
+          <span class="day-pill">3日目</span>
           <strong>1/11（日）</strong>
           <p>沖縄北部をドライブ観光。夜は宿でバーベキューを予定。</p>
         </div>
         <div class="card">
+          <span class="day-pill">4日目</span>
           <strong>1/12（月）</strong>
           <p>那覇の宿に移動し、国際通りなどでショッピング。</p>
         </div>
         <div class="card">
+          <span class="day-pill">5日目</span>
           <strong>1/13（火）</strong>
           <p>那覇から関空へ移動して帰宅。</p>
         </div>
@@ -249,7 +315,8 @@
     <!-- 行きたい場所リスト：訪問予定スポット -->
     <section>
       <h2>行きたい場所リスト</h2>
-      <ul>
+      <div class="divider"></div>
+      <ul class="list-accent">
         <li>美ら海水族館</li>
         <li>名護パイナップルパーク</li>
         <li>その他は考え中</li>
@@ -259,6 +326,7 @@
     <!-- やりたいことリスト：これから検討する内容 -->
     <section>
       <h2>やりたいことリスト</h2>
+      <div class="divider"></div>
       <p>これから家族で考える予定です。海辺の散歩や冬の星空観察など、アイデアを持ち寄って決めたいと思います。</p>
     </section>
   </main>
